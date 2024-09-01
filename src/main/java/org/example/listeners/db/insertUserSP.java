@@ -22,7 +22,7 @@ public class insertUserSP extends ListenerAdapter {
 
                 try {
                     DBSetupSP.insertUsersp(name, amount, lastPayment, dueDate);
-                    event.reply("User inserted successfully!").setEphemeral(true).queue();
+                    event.reply("User inserted successfully!").setEphemeral(false).queue();
                 } catch (SQLException e) {
                     String[] eArr = e.toString().split(" ");
                     StringBuilder eRes = new StringBuilder();
@@ -35,7 +35,7 @@ public class insertUserSP extends ListenerAdapter {
                         }
                     }
                     System.out.println(eRes.toString());
-                    event.reply("Error inserting user." + eRes.toString()).setEphemeral(true).queue();
+                    event.reply("Error inserting user." + eRes.toString()).setEphemeral(false).queue();
                     e.printStackTrace();
                 }
             }

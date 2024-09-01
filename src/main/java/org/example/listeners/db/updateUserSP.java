@@ -34,7 +34,7 @@ public class updateUserSP extends ListenerAdapter {
                 try {
                     LocalDate dueDate = DBSetupSP.getDueDatesp(name);
                     DBSetupSP.updateUserAmountsp(name, amount, lastPayment, dueDate, advance_months);
-                    event.reply("User updated successfully!").setEphemeral(true).queue();
+                    event.reply("User updated successfully!").setEphemeral(false).queue();
                 } catch (SQLException e) {
                     String[] eArr = e.toString().split(" ");
                     StringBuilder eRes = new StringBuilder();
@@ -46,7 +46,7 @@ public class updateUserSP extends ListenerAdapter {
                         }
                     }
                     System.out.println(eRes.toString());
-                    event.reply("Error updating user." + eRes.toString()).setEphemeral(true).queue();
+                    event.reply("Error updating user." + eRes.toString()).setEphemeral(false).queue();
                     e.printStackTrace();
                 }
             }
