@@ -4,9 +4,9 @@ import java.sql.*;
 import java.time.LocalDate;
 
 public class DBSetupSP {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/finbot_db";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "$root$16081985";
+    private static final String JDBC_URL = "url";
+    private static final String DB_USER = "user";
+    private static final String DB_PASSWORD = "password";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
